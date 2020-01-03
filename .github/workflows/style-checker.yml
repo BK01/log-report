@@ -3,9 +3,6 @@ name: Python Style Checker
 # This workflow is triggered by a PR
 # Simplified -> on: [pull_request]
 on:
-  push:
-    branches:
-      - master
   pull_request:
     branches:
       - master
