@@ -1,0 +1,15 @@
+name: Python Style Checker
+uses: andymckay/pycodestyle-action@0.1.3
+
+# This workflow is triggered by a PR
+# Simplified -> on: [pull_request]
+on:
+  # Trigger the workflow for master branch only
+  push:
+    branches:
+      - master
+  pull_request:
+    branches:
+      - master
+  page_build:
+  release:
