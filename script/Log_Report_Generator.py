@@ -164,8 +164,10 @@ csvLogFileContent = csvLogFileContent[pd.to_numeric(csvLogFileContent
 
 # Ensure that the 'NUM_SUBMITTED_REQUESTS' column is
 # an integer for calculations
-csvLogFileContent['NUM_SUBMITTED_REQUESTS'] = csvLogFileContent. \
-                                              NUM_SUBMITTED_REQUESTS.astype(int)
+csvLogFileContent['NUM_SUBMITTED_REQUESTS'] = \
+                                            csvLogFileContent.\
+                                            NUM_SUBMITTED_REQUESTS.\
+                                            astype(int)
 
 # -------------------------------------------------------------------
 
@@ -179,11 +181,15 @@ print(csvLogFileContent['WHEN_CREATED'][csvLogFileContent.index[-1]])
 
 print('\nCreate a smaller dataframe using the user date range of: ')
 print('\nFrom: ' + startDate + ' to ' + endDate)
-csvLogFileContentTrimmed = csvLogFileContent.loc[csvLogFileContent['WHEN_CREATED']. \
-                                                 str.split(' ').str[0] >= startDate]
+csvLogFileContentTrimmed = \
+                         csvLogFileContent.\
+                         loc[csvLogFileContent['WHEN_CREATED'].
+                             str.split(' ').str[0] >= startDate]
 
-csvLogFileContentTrimmed = csvLogFileContentTrimmed.loc[csvLogFileContent['WHEN_CREATED']. \
-                                                 str.split(' ').str[0] <= endDate]
+csvLogFileContentTrimmed = \
+                         csvLogFileContentTrimmed.\
+                         loc[csvLogFileContent['WHEN_CREATED'].
+                             str.split(' ').str[0] <= endDate]
 # print(csvLogFileContentTrimmed)
 
 # -------------------------------------------------------------------
