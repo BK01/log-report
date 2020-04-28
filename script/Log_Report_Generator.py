@@ -140,7 +140,7 @@ with open(mergedLogFile, 'w') as outfile:
 
 print('\nConverting log from tsv to csv')
 tsv_file = mergedLogFile
-csv_table = pd.read_table(tsv_file,sep='\t')
+csv_table = pd.read_table(tsv_file, sep='\t')
 csv_table.to_csv(csvLogFile, index=False)
 
 # -------------------------------------------------------------------
